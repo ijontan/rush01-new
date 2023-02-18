@@ -6,13 +6,13 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:34:35 by itan              #+#    #+#             */
-/*   Updated: 2023/02/18 12:03:45 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/18 13:57:58 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-int	**create_table(int size)
+static int	**create_table(int size)
 {
 	int	**dst;
 	int	i;
@@ -56,12 +56,12 @@ int	**parse_table(char const **av, int size)
 		dst[0][(i++) + 1] = atoi(*(av++));
 	i = 0;
 	while (i < size)
-		dst[5][(i++) + 1] = atoi(*(av++));
+		dst[size + 1][(i++) + 1] = atoi(*(av++));
 	i = 0;
 	while (i < size)
 		dst[(i++) + 1][0] = atoi(*(av++));
 	i = 0;
 	while (i < size)
-		dst[(i++) + 1][0] = atoi(*(av++));
+		dst[(i++) + 1][size + 1] = atoi(*(av++));
 	return (dst);
 }

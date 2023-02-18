@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:53:35 by itan              #+#    #+#             */
-/*   Updated: 2023/02/17 19:04:09 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/18 14:01:55 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 # define RUSH01_H
 
 # include "libft.h"
+
+/* ------------------------------- constrains ------------------------------- */
+int		solve_known(int **table, int size);
+
+/* ---------------------------------- parse --------------------------------- */
+void	free_table(int **table);
+int		**parse_table(char const **av, int size);
 
 #endif
