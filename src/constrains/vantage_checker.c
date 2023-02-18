@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:22:02 by itan              #+#    #+#             */
-/*   Updated: 2023/02/18 23:30:56 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/18 23:34:23 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	vc_top(int **table, int j, int size)
 			val++;
 		}
 	}
+	if (val > table[0][j])
+		return (-1);
 	return (val == table[0][j]);
 }
 
@@ -49,7 +51,9 @@ int	vc_bot(int **table, int j, int size)
 			val++;
 		}
 	}
-	return (val == table[0][j]);
+	if (val > table[size + 1][j])
+		return (-1);
+	return (val == table[size + 1][j]);
 }
 
 int	vc_left(int **table, int i, int size)
@@ -69,6 +73,8 @@ int	vc_left(int **table, int i, int size)
 			val++;
 		}
 	}
+	if (val > table[i][0])
+		return (-1);
 	return (val == table[i][0]);
 }
 
@@ -89,7 +95,9 @@ int	vc_right(int **table, int i, int size)
 			val++;
 		}
 	}
-	return (val == table[i][0]);
+	if (val > table[i][size + 1])
+		return (-1);
+	return (val == table[i][size + 1]);
 }
 
 int	vantage_checker(int **table, int size)
