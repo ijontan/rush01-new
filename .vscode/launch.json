@@ -5,7 +5,91 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(gdb) Launch",
+      "name": "4x4",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/debug.out",
+      "args": [
+        "2",
+        "3",
+        "2",
+        "1",
+        "3",
+        "2",
+        "1",
+        "2",
+        "4",
+        "1",
+        "2",
+        "2",
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description": "Set Disassembly Flavor to Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ],
+      "preLaunchTask": "make debug"
+    },
+    {
+      "name": "4x4 2",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/debug.out",
+      "args": [
+        "4",
+        "3",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "4",
+        "3",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+          {
+              "description": "Enable pretty-printing for gdb",
+              "text": "-enable-pretty-printing",
+              "ignoreFailures": true
+          },
+          {
+              "description": "Set Disassembly Flavor to Intel",
+              "text": "-gdb-set disassembly-flavor intel",
+              "ignoreFailures": true
+          }
+      ],
+      "preLaunchTask": "make debug"
+    },
+    {
+      "name": "4x4 3",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/debug.out",
@@ -44,6 +128,22 @@
               "ignoreFailures": true
           }
       ],
+      "preLaunchTask": "make debug"
+    },
+    {
+      "name": "7x7",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/debug.out",
+      "args": [ "2","3","4","4","3","2","1",
+                "1","2","3","3","3","4","5",
+                "2","5","3","3","2","2","1",
+                "1","2","2","3","4","4","5"],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
       "preLaunchTask": "make debug"
     },
   

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:22:02 by itan              #+#    #+#             */
-/*   Updated: 2023/02/18 23:34:23 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/19 02:46:36 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	vc_top(int **table, int j, int size)
 	i = 0;
 	hold = 0;
 	val = 0;
-	while (++i < size)
+	while (++i < size + 1)
 	{
 		if (hold < table[i][j])
 		{
@@ -40,7 +40,7 @@ int	vc_bot(int **table, int j, int size)
 	int	hold;
 	int	i;
 
-	i = size + 2;
+	i = size + 1;
 	hold = 0;
 	val = 0;
 	while (--i > 0)
@@ -65,7 +65,7 @@ int	vc_left(int **table, int i, int size)
 	j = 0;
 	hold = 0;
 	val = 0;
-	while (++j < size)
+	while (++j < size + 1)
 	{
 		if (hold < table[i][j])
 		{
@@ -84,7 +84,7 @@ int	vc_right(int **table, int i, int size)
 	int	hold;
 	int	j;
 
-	j = size + 2;
+	j = size + 1;
 	hold = 0;
 	val = 0;
 	while (--j > 0)
@@ -108,16 +108,18 @@ int	vantage_checker(int **table, int size)
 
 	val = 0;
 	i = 0;
-	while (++i < size + 2)
+	while (++i < size + 1)
 	{
 		val += vc_left(table, i, size);
 		val += vc_right(table, i, size);
 	}
 	j = 0;
-	while (++j < size + 2)
+	while (++j < size + 1)
 	{
 		val += vc_top(table, j, size);
 		val += vc_bot(table, j, size);
 	}
-	return (val == size * size);
+	if (table[1][3] == 3 && table[1][2] == 4)
+		ft_printf("");
+	return (val == size * 4);
 }

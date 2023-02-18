@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:34:35 by itan              #+#    #+#             */
-/*   Updated: 2023/02/18 13:57:58 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/19 01:39:17 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ static int	**create_table(int size)
 	return (dst);
 }
 
-void	free_table(int **table)
+void	free_table(int **table, int size)
 {
 	int	i;
 
 	i = 0;
-	while (i < 6)
+	while (i < size + 2)
 		free(table[i++]);
 	free(table);
 }
