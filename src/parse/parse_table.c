@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:34:35 by itan              #+#    #+#             */
-/*   Updated: 2023/02/17 19:05:21 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/18 12:03:45 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	**create_table(int size)
 {
 	int	**dst;
 	int	i;
+	int	j;
 
 	i = 0;
 	dst = (int **)malloc(sizeof(int *) * (size + 2));
@@ -24,8 +25,12 @@ int	**create_table(int size)
 	while (i < size + 2)
 	{
 		dst[i] = (int *)malloc(sizeof(int) * (size + 2));
-		if (!dst[i++])
+		if (!dst[i])
 			return (NULL);
+		j = 0;
+		while (j < size + 2)
+			dst[i][j++] = 0;
+		i++;
 	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:16:50 by itan              #+#    #+#             */
-/*   Updated: 2023/02/17 19:10:12 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/18 12:05:56 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,27 @@ int	get_size(int ac)
 	return (0);
 }
 
+void	print(int **table, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size + 2)
+	{
+		j = 0;
+		while (j < size + 2)
+		{
+			ft_printf(" %i ", )
+		}
+	}
+	ft_printf("\nok\n");
+}
+
 int	main(int ac, char const **av)
 {
+	int	**table;
+
 	(void)ac;
 	(void)av;
 	ft_printf("%i", get_size(2147395600));
