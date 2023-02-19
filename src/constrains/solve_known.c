@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:22:54 by itan              #+#    #+#             */
-/*   Updated: 2023/02/19 02:28:51 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/19 19:07:46 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,20 @@ static void	solve_1(int **table, int size)
 	{
 		if (table[i][0] == 1)
 			table[i][1] = size;
+		if (table[i][0] == 1 && table[i][size + 1] == 2)
+			table[i][size] = size - 1;
 		if (table[i][size + 1] == 1)
 			table[i][size] = size;
+		if (table[i][size + 1] == 1 && table[i][0] == 2)
+			table[i][1] = size - 1;
 		if (table[0][i] == 1)
 			table[1][i] = size;
+		if (table[0][i] == 1 && table[size + 1][i] == 2)
+			table[size][i] = size - 1;
 		if (table[size + 1][i] == 1)
 			table[size][i] = size;
+		if (table[size + 1][i] == 1 && table[0][i] == 2)
+			table[1][i] = size - 1;
 	}
 }
 
