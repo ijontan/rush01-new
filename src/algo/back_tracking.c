@@ -6,7 +6,7 @@
 /*   By: itan <itan@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:32:21 by itan              #+#    #+#             */
-/*   Updated: 2023/02/19 03:01:50 by itan             ###   ########.fr       */
+/*   Updated: 2023/02/19 16:29:54 by itan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	check_val(int **table, int size, int i, int j)
 				return (1);
 		if (back_track(table, size, i, j + 1))
 			return (1);
+		table[i + 1][j + 1] = 0;
 	}
 	return (-1);
 }
