@@ -1,4 +1,5 @@
 *.o
 *.out
 rush01
+*.DSYM
 push_swap_visualizer/
